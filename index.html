@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="color-scheme" content="light only">
+    <meta name="supported-color-schemes" content="light only">
     <title>Engagement Invitation | Hariharan M &amp; Sowmiya M</title>
 
     <!-- WhatsApp & Social Sharing Meta Tags -->
@@ -19,6 +21,9 @@
     <!-- 100% Native Self-Contained CSS -->
     <style>
         :root {
+            color-scheme: light only;
+            forced-color-adjust: none;
+            -webkit-forced-color-adjust: none;
             --parchment-light: #FAF6EE;
             --parchment-warm: #F4ECE0;
             --parchment-deep: #EADBC4;
@@ -35,23 +40,36 @@
             --lotus-pink: #D98A8C;
         }
 
+        :root, html, body {
+            color-scheme: light only !important;
+            forced-color-adjust: none !important;
+            -webkit-forced-color-adjust: none !important;
+            background-color: #FAF6EE !important;
+            background-image: linear-gradient(180deg, #FAF6EE 0%, #FAF6EE 100%) !important;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             -webkit-tap-highlight-color: transparent;
+            forced-color-adjust: none;
+            -webkit-forced-color-adjust: none;
         }
 
         html {
             scroll-behavior: smooth;
-            background-color: #1F1B16;
-            color: var(--olive-dark);
+            background-color: #FAF6EE !important;
+            background-image: linear-gradient(180deg, #FAF6EE 0%, #FAF6EE 100%) !important;
+            color: var(--olive-dark) !important;
             font-family: 'Cormorant Garamond', Georgia, serif;
         }
 
         body {
             min-height: 100vh;
-            background: radial-gradient(circle at center, #2C251D 0%, #17130E 100%);
+            background-color: #FAF6EE !important;
+            background-image: linear-gradient(180deg, #FAF6EE 0%, #FAF6EE 100%) !important;
+            color: var(--olive-dark) !important;
             display: flex;
             justify-content: center;
             overflow-x: hidden;
@@ -60,6 +78,30 @@
         body.locked {
             overflow: hidden;
             height: 100vh;
+        }
+
+        /* Anti-Dark-Mode Lock for Key Containers */
+        #gatefold-cover,
+        .cover-card,
+        .invitation-shell {
+            color-scheme: light only !important;
+            forced-color-adjust: none !important;
+            -webkit-forced-color-adjust: none !important;
+            background-color: #FAF6EE !important;
+            background-image: linear-gradient(180deg, #FAF6EE 0%, #F4ECE0 100%) !important;
+            color: var(--olive-dark) !important;
+        }
+
+        .venue-card,
+        .countdown-box,
+        .scratch-card-inner,
+        .control-btn {
+            color-scheme: light only !important;
+            forced-color-adjust: none !important;
+            -webkit-forced-color-adjust: none !important;
+            background-color: #FFFDF8 !important;
+            background-image: linear-gradient(180deg, #FFFDF8 0%, #F3E6CE 100%) !important;
+            color: var(--olive-dark) !important;
         }
 
         /* Typography Classes */
@@ -1033,7 +1075,6 @@
     <audio id="bg-audio" loop preload="auto">
         <source src="./song.mp3" type="audio/mpeg">
         <source src="./marriage-at-2am-background-score-masstamilandev_uKTQQ87m.mp3" type="audio/mpeg">
-        
     </audio>
 
     <!-- Bottom-Right Circular Play / Pause Audio Toggle Button (Icon Only) -->
