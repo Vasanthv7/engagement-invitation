@@ -1029,10 +1029,10 @@
     <!-- Full-Screen Flower Petal Pop Canvas -->
     <canvas id="petal-canvas"></canvas>
 
-    <!-- Built-In Audio Element (Plays song.mp3 if present, with automatic Web Audio Saxophone/Brass Rock-Fusion synth of the uploaded track) -->
+    <!-- Single Audio Element (Strictly plays your uploaded MP3 file only; NO synthesized or fallback music) -->
     <audio id="bg-audio" loop preload="auto">
-        <source src="song.mp3" type="audio/mpeg">
-        
+        <source src="./song.mp3" type="audio/mpeg">
+        <source src="./marriage-at-2am-background-score-masstamilandev_uKTQQ87m.mp3" type="audio/mpeg">
     </audio>
 
     <!-- Bottom-Right Circular Play / Pause Audio Toggle Button (Icon Only) -->
@@ -1221,9 +1221,9 @@
             <div class="scratch-card-frame">
                 <div class="scratch-card-inner">
                     <span class="revealed-date-badge">Save The Date</span>
-                    <div class="revealed-date-big">22 . 11 . 2026</div>
-                    <div class="revealed-date-full">Sunday, 22nd November 2026</div>
-                    <div class="revealed-time-pill">Muhurtham: 10:00 AM – 11:00 AM</div>
+                    <div class="revealed-date-big">22 . 11 . 26</div>
+                    <div class="revealed-date-full">SUNDAY, 22 NOVEMBER 2026</div>
+                    <div class="revealed-time-pill">10:00 AM – 11:00 AM</div>
                 </div>
                 <!-- Metallic Gold Foil Scratch Layer -->
                 <canvas id="scratch-canvas"></canvas>
@@ -1342,15 +1342,11 @@
     </main>
 
     <!-- ==========================================
-         INTERACTIVE JAVASCRIPT (Cover, Scratch Card, Petals, Music, Countdown)
+         INTERACTIVE JAVASCRIPT (Cover, Scratch Card, Petals, MP3-Only Music, Countdown)
          ========================================== -->
     <script>
         let isInvitationOpened = false;
-        let audioCtx = null;
         let isMusicPlaying = false;
-        let externalAudioAvailable = false;
-        let stepInterval = null;
-        let stepIdx = 0;
         let petals = [];
         let petalAnimId = null;
         let isDrawing = false;
@@ -1360,68 +1356,7 @@
         const petalColors = ['#F59E0B', '#FBBF24', '#EA580C', '#D97706', '#E5989B', '#D4AF37', '#FEF08A'];
 
         // ==========================================
-        // UPLOADED TRACK SCORE: CELEBRATORY SAXOPHONE & BRASS ROCK-FUSION RIFF
-        // Matches the upbeat ~150 BPM syncopated F-minor / F-blues sax & brass hook,
-        // driving rock drum kit, and punchy electric bassline from the uploaded track
-        // ==========================================
-        const N = {
-            F2: 87.31, Ab2: 103.83, Bb2: 116.54, C3: 130.81, Eb3: 155.56,
-            F4: 349.23, G4: 392.00, Ab4: 415.30, A4: 440.00, Bb4: 466.16,
-            B4: 493.88, C5: 523.25, Db5: 554.37, D5: 587.33, Eb5: 622.25,
-            F5: 698.46, G5: 783.99, Ab5: 830.61
-        };
-
-        // 32-step (2-bar, 16th-note) main saxophone lead riff + high-register variation
-        const saxLeadRiff = [
-            // Bar 1: Syncopated brassy saxophone hook (F4 -> G4 -> Ab4 -> A4 -> Bb4 -> C5)
-            { f: N.F4, d: 0.22, slide: N.E4 }, null,
-            { f: N.F4, d: 0.11 }, { f: N.G4, d: 0.18 },
-            { f: N.Ab4, d: 0.22 }, null,
-            { f: N.A4, d: 0.12 }, { f: N.Bb4, d: 0.22 },
-            null, { f: N.C5, d: 0.24, vib: true },
-            null, { f: N.Bb4, d: 0.12 },
-            { f: N.C5, d: 0.14 }, { f: N.Db5, d: 0.14 },
-            { f: N.C5, d: 0.14 }, { f: N.Bb4, d: 0.20 },
-
-            // Bar 2: Expressive sax turnaround & bluesy bend
-            { f: N.Ab4, d: 0.20 }, { f: N.G4, d: 0.14 },
-            { f: N.F4, d: 0.24 }, null,
-            { f: N.Ab4, d: 0.18 }, { f: N.G4, d: 0.14 },
-            { f: N.F4, d: 0.20 }, { f: N.Bb4, d: 0.22 },
-            null, { f: N.C5, d: 0.26, vib: true },
-            null, { f: N.Db5, d: 0.14 },
-            { f: N.C5, d: 0.18 }, { f: N.Bb4, d: 0.18 },
-            { f: N.Ab4, d: 0.14 }, { f: N.G4, d: 0.16 },
-
-            // Bar 3: High-energy upper-octave sax & brass soar (0:15+ section of track)
-            { f: N.C5, d: 0.22 }, null,
-            { f: N.Eb5, d: 0.20 }, { f: N.C5, d: 0.14 },
-            { f: N.Bb4, d: 0.22 }, { f: N.Ab4, d: 0.16 },
-            { f: N.Bb4, d: 0.24, vib: true }, null,
-            { f: N.C5, d: 0.18 }, { f: N.Eb5, d: 0.18 },
-            { f: N.F5, d: 0.28, vib: true }, null,
-            { f: N.Eb5, d: 0.14 }, { f: N.C5, d: 0.14 },
-            { f: N.Bb4, d: 0.18 }, { f: N.Ab4, d: 0.18 },
-
-            // Bar 4: Climax brass run & rhythmic stabs
-            { f: N.Bb4, d: 0.22 }, { f: N.C5, d: 0.16 },
-            { f: N.Eb5, d: 0.24 }, null,
-            { f: N.F5, d: 0.22, vib: true }, { f: N.Eb5, d: 0.14 },
-            { f: N.C5, d: 0.20 }, { f: N.Bb4, d: 0.18 },
-            { f: N.Ab4, d: 0.22 }, { f: N.Bb4, d: 0.16 },
-            { f: N.Ab4, d: 0.16 }, { f: N.G4, d: 0.16 },
-            { f: N.F4, d: 0.32, vib: true }, null,
-            null, { f: N.C5, d: 0.14 }
-        ];
-
-        // Driving rock bass & guitar power-chord root progression (16 steps per bar)
-        const bassProgression = [
-            N.F2, null, N.F2, N.F2, N.Ab2, null, N.Bb2, null,
-            N.C3, null, N.C3, N.Bb2, N.Ab2, null, N.G2 || 98.00, null
-        ];
-
-        // ==========================================
-        // 1. CRITICAL FIX: OPEN INVITATION IMMEDIATELY FIRST
+        // 1. OPEN INVITATION IMMEDIATELY
         // ==========================================
         function openInvitation(e) {
             if (e && typeof e.preventDefault === 'function' && e.type === 'touchend') {
@@ -1433,7 +1368,7 @@
             const gatefoldCover = document.getElementById('gatefold-cover');
             const mainInvitation = document.getElementById('main-invitation');
 
-            // Step 1: Immediately open & hide the cover and unlock scrolling BEFORE any audio or canvas code
+            // Step 1: Immediately open & hide the cover and unlock scrolling
             if (gatefoldCover) {
                 gatefoldCover.classList.add('opened');
                 gatefoldCover.style.opacity = '0';
@@ -1454,7 +1389,7 @@
                 mainInvitation.style.opacity = '1';
             }
 
-            // Step 2: Safely run audio, petal burst, and scratch card initialization in isolated try/catch blocks
+            // Step 2: Start uploaded MP3 audio, petal burst, and scratch card
             try {
                 startAudio();
             } catch (err) {
@@ -1476,253 +1411,62 @@
         window.openInvitation = openInvitation;
 
         // ==========================================
-        // 2. CELEBRATORY SAXOPHONE / BRASS ROCK-FUSION AUDIO ENGINE
+        // 2. MP3-ONLY AUDIO CONTROLLER (NO SYNTHESIZER FALLBACK)
         // ==========================================
-        function playSaxBrassNote(freq, duration = 0.2, withVibrato = false) {
-            if (!audioCtx || !isMusicPlaying || externalAudioAvailable) return;
-            try {
-                const now = audioCtx.currentTime;
+        function updateMusicUI(playing) {
+            isMusicPlaying = playing;
+            const musicBtn = document.getElementById('music-toggle-btn');
+            const iconPlay = document.getElementById('icon-play');
+            const iconPause = document.getElementById('icon-pause');
 
-                // Expressive Alto/Tenor Saxophone + Brass Horn Section layered oscillators
-                const saxOsc = audioCtx.createOscillator();
-                const brassOsc = audioCtx.createOscillator();
-                const subHarmony = audioCtx.createOscillator();
-
-                // Warm reed/horn resonant formant filter
-                const filter = audioCtx.createBiquadFilter();
-                filter.type = 'bandpass';
-                filter.frequency.setValueAtTime(1350, now);
-                filter.Q.setValueAtTime(2.2, now);
-
-                const lowpass = audioCtx.createBiquadFilter();
-                lowpass.type = 'lowpass';
-                lowpass.frequency.setValueAtTime(3400, now);
-
-                const gain = audioCtx.createGain();
-
-                saxOsc.type = 'sawtooth';
-                brassOsc.type = 'square';
-                subHarmony.type = 'sawtooth';
-
-                // Slight expressive pitch scoop into the note like a real saxophone player
-                saxOsc.frequency.setValueAtTime(freq * 0.97, now);
-                saxOsc.frequency.exponentialRampToValueAtTime(freq, now + 0.03);
-
-                brassOsc.frequency.setValueAtTime(freq * 1.003, now);
-                subHarmony.frequency.setValueAtTime(freq * 0.5, now);
-
-                if (withVibrato) {
-                    const vibOsc = audioCtx.createOscillator();
-                    const vibGain = audioCtx.createGain();
-                    vibOsc.frequency.value = 6.5;
-                    vibGain.gain.value = 6;
-                    vibOsc.connect(vibGain);
-                    vibGain.connect(saxOsc.frequency);
-                    vibOsc.start(now);
-                    vibOsc.stop(now + duration);
-                }
-
-                gain.gain.setValueAtTime(0.001, now);
-                gain.gain.linearRampToValueAtTime(0.095, now + 0.02);
-                gain.gain.setValueAtTime(0.08, now + duration * 0.65);
-                gain.gain.exponentialRampToValueAtTime(0.0008, now + duration);
-
-                saxOsc.connect(filter);
-                brassOsc.connect(filter);
-                subHarmony.connect(lowpass);
-                filter.connect(lowpass);
-                lowpass.connect(gain);
-                gain.connect(audioCtx.destination);
-
-                saxOsc.start(now);
-                brassOsc.start(now);
-                subHarmony.start(now);
-                saxOsc.stop(now + duration);
-                brassOsc.stop(now + duration);
-                subHarmony.stop(now + duration);
-            } catch (err) {
-                console.warn(err);
+            if (musicBtn) {
+                musicBtn.classList.toggle('is-playing', playing);
             }
-        }
-
-        function playRockBassAndGuitar(freq, duration = 0.16) {
-            if (!audioCtx || !isMusicPlaying || externalAudioAvailable) return;
-            try {
-                const now = audioCtx.currentTime;
-                const bassOsc = audioCtx.createOscillator();
-                const fifthOsc = audioCtx.createOscillator();
-                const filter = audioCtx.createBiquadFilter();
-                const gain = audioCtx.createGain();
-
-                bassOsc.type = 'sawtooth';
-                fifthOsc.type = 'square';
-
-                bassOsc.frequency.setValueAtTime(freq, now);
-                fifthOsc.frequency.setValueAtTime(freq * 1.5, now); // Power chord fifth
-
-                filter.type = 'lowpass';
-                filter.frequency.setValueAtTime(680, now);
-
-                gain.gain.setValueAtTime(0.001, now);
-                gain.gain.linearRampToValueAtTime(0.075, now + 0.015);
-                gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
-
-                bassOsc.connect(filter);
-                fifthOsc.connect(filter);
-                filter.connect(gain);
-                gain.connect(audioCtx.destination);
-
-                bassOsc.start(now);
-                fifthOsc.start(now);
-                bassOsc.stop(now + duration);
-                fifthOsc.stop(now + duration);
-            } catch (err) {
-                console.warn(err);
+            if (iconPlay) {
+                iconPlay.style.display = playing ? 'none' : 'block';
             }
-        }
-
-        function playRockDrumStep(stepInBar) {
-            if (!audioCtx || !isMusicPlaying || externalAudioAvailable) return;
-            try {
-                const now = audioCtx.currentTime;
-
-                // Punchy Kick Drum on beats 0, 3, 6, 8, 10
-                if (stepInBar === 0 || stepInBar === 3 || stepInBar === 6 || stepInBar === 8 || stepInBar === 10) {
-                    const kickOsc = audioCtx.createOscillator();
-                    const kickGain = audioCtx.createGain();
-                    kickOsc.type = 'sine';
-                    kickOsc.frequency.setValueAtTime(135, now);
-                    kickOsc.frequency.exponentialRampToValueAtTime(38, now + 0.11);
-
-                    kickGain.gain.setValueAtTime(0.16, now);
-                    kickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.13);
-
-                    kickOsc.connect(kickGain);
-                    kickGain.connect(audioCtx.destination);
-                    kickOsc.start(now);
-                    kickOsc.stop(now + 0.13);
-                }
-
-                // Crisp Rock Snare on backbeats 4 and 12
-                if (stepInBar === 4 || stepInBar === 12) {
-                    const bufferSize = audioCtx.sampleRate * 0.12;
-                    const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-                    const output = noiseBuffer.getChannelData(0);
-                    for (let i = 0; i < bufferSize; i++) {
-                        output[i] = Math.random() * 2 - 1;
-                    }
-                    const whiteNoise = audioCtx.createBufferSource();
-                    whiteNoise.buffer = noiseBuffer;
-
-                    const snareFilter = audioCtx.createBiquadFilter();
-                    snareFilter.type = 'highpass';
-                    snareFilter.frequency.setValueAtTime(750, now);
-
-                    const snareGain = audioCtx.createGain();
-                    snareGain.gain.setValueAtTime(0.085, now);
-                    snareGain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
-
-                    whiteNoise.connect(snareFilter);
-                    snareFilter.connect(snareGain);
-                    snareGain.connect(audioCtx.destination);
-                    whiteNoise.start(now);
-                } else if (stepInBar % 2 === 0) {
-                    // Tight Hi-Hat pulse on 8th notes
-                    const bufferSize = audioCtx.sampleRate * 0.04;
-                    const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-                    const output = noiseBuffer.getChannelData(0);
-                    for (let i = 0; i < bufferSize; i++) {
-                        output[i] = Math.random() * 2 - 1;
-                    }
-                    const hatNoise = audioCtx.createBufferSource();
-                    hatNoise.buffer = noiseBuffer;
-
-                    const hatFilter = audioCtx.createBiquadFilter();
-                    hatFilter.type = 'highpass';
-                    hatFilter.frequency.setValueAtTime(5500, now);
-
-                    const hatGain = audioCtx.createGain();
-                    hatGain.gain.setValueAtTime(0.025, now);
-                    hatGain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
-
-                    hatNoise.connect(hatFilter);
-                    hatFilter.connect(hatGain);
-                    hatGain.connect(audioCtx.destination);
-                    hatNoise.start(now);
-                }
-            } catch (err) {
-                console.warn(err);
+            if (iconPause) {
+                iconPause.style.display = playing ? 'block' : 'none';
             }
         }
 
         function startAudio() {
-            const musicBtn = document.getElementById('music-toggle-btn');
-            const iconPlay = document.getElementById('icon-play');
-            const iconPause = document.getElementById('icon-pause');
             const bgAudio = document.getElementById('bg-audio');
+            if (!bgAudio) return;
 
-            isMusicPlaying = true;
-            if (musicBtn) musicBtn.classList.add('is-playing');
-            if (iconPlay) iconPlay.style.display = 'none';
-            if (iconPause) iconPause.style.display = 'block';
+            bgAudio.volume = 0.85;
+            const playPromise = bgAudio.play();
 
-            if (externalAudioAvailable && bgAudio) {
-                bgAudio.play().catch((err) => console.warn(err));
-                return;
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    updateMusicUI(true);
+                }).catch((err) => {
+                    console.warn('MP3 playback prevented or file not found:', err);
+                    updateMusicUI(false);
+                });
             }
-
-            const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-            if (!audioCtx && AudioContextClass) {
-                audioCtx = new AudioContextClass();
-            }
-            if (audioCtx && audioCtx.state === 'suspended') {
-                audioCtx.resume().catch((err) => console.warn(err));
-            }
-
-            if (stepInterval) clearInterval(stepInterval);
-
-            // 16th-note groove at ~148 BPM (102ms per 16th step)
-            stepInterval = setInterval(() => {
-                if (!isMusicPlaying || externalAudioAvailable) return;
-
-                const leadStep = saxLeadRiff[stepIdx % saxLeadRiff.length];
-                const barStep = stepIdx % 16;
-                const bassFreq = bassProgression[barStep];
-
-                if (leadStep && leadStep.f) {
-                    playSaxBrassNote(leadStep.f, leadStep.d, Boolean(leadStep.vib));
-                }
-                if (bassFreq) {
-                    playRockBassAndGuitar(bassFreq, 0.16);
-                }
-                playRockDrumStep(barStep);
-
-                stepIdx++;
-            }, 105);
         }
 
         function stopAudio() {
-            const musicBtn = document.getElementById('music-toggle-btn');
-            const iconPlay = document.getElementById('icon-play');
-            const iconPause = document.getElementById('icon-pause');
             const bgAudio = document.getElementById('bg-audio');
-
-            isMusicPlaying = false;
-            if (musicBtn) musicBtn.classList.remove('is-playing');
-            if (iconPlay) iconPlay.style.display = 'block';
-            if (iconPause) iconPause.style.display = 'none';
-            if (stepInterval) clearInterval(stepInterval);
             if (bgAudio) {
-                try { bgAudio.pause(); } catch (err) { console.warn(err); }
+                try {
+                    bgAudio.pause();
+                } catch (err) {
+                    console.warn(err);
+                }
             }
+            updateMusicUI(false);
         }
 
         function toggleAudio() {
-            try {
-                if (isMusicPlaying) stopAudio();
-                else startAudio();
-            } catch (err) {
-                console.warn(err);
+            const bgAudio = document.getElementById('bg-audio');
+            if (!bgAudio) return;
+
+            if (bgAudio.paused) {
+                startAudio();
+            } else {
+                stopAudio();
             }
         }
         window.toggleAudio = toggleAudio;
@@ -1847,15 +1591,11 @@
                 scratchCanvas.style.pointerEvents = 'none';
             }
             if (scratchStatus) {
-                scratchStatus.textContent = '🎉 Date Revealed! Sunday, 22.11.2026 (10 AM - 11 AM)';
+                scratchStatus.textContent = '🎉 Date Revealed! Sunday, 22.11.26 (10 AM - 11 AM)';
                 scratchStatus.style.textDecoration = 'none';
             }
             try {
                 triggerPetalPop(75);
-                if (isMusicPlaying && !externalAudioAvailable) {
-                    playSaxBrassNote(N.C5, 0.22, false);
-                    setTimeout(() => playSaxBrassNote(N.F5, 0.38, true), 150);
-                }
             } catch (err) {
                 console.warn(err);
             }
@@ -1882,9 +1622,8 @@
             }
 
             if (bgAudio) {
-                bgAudio.addEventListener('canplaythrough', () => {
-                    externalAudioAvailable = true;
-                });
+                bgAudio.addEventListener('play', () => updateMusicUI(true));
+                bgAudio.addEventListener('pause', () => updateMusicUI(false));
             }
 
             try {
