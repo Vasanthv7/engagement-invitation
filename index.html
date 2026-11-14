@@ -1,1 +1,2012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Engagement Invitation | Hariharan M &amp; Sowmiya M</title>
 
+    <!-- WhatsApp & Social Sharing Meta Tags -->
+    <meta property="og:title" content="Engagement Invitation: Hariharan M & Sowmiya M">
+    <meta property="og:description" content="Join us as we celebrate the sacred engagement of Hariharan M & Sowmiya M. Tap to open our digital invitation!">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#FAF6EE">
+
+    <!-- Google Fonts: Great Vibes, Cormorant Garamond, Cinzel, Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- 100% Native Self-Contained CSS -->
+    <style>
+        :root {
+            --parchment-light: #FAF6EE;
+            --parchment-warm: #F4ECE0;
+            --parchment-deep: #EADBC4;
+            --olive-dark: #2F4726;
+            --olive-medium: #3E5A34;
+            --bronze-text: #5A4632;
+            --gold-bright: #D4AF37;
+            --gold-metallic: #C59B27;
+            --gold-dark: #8E6A14;
+            --gold-soft: #E5CE8F;
+            --marigold-yellow: #F59E0B;
+            --marigold-orange: #EA580C;
+            --marigold-red: #9A3412;
+            --lotus-pink: #D98A8C;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: #1F1B16;
+            color: var(--olive-dark);
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at center, #2C251D 0%, #17130E 100%);
+            display: flex;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        body.locked {
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Typography Classes */
+        .font-script {
+            font-family: 'Great Vibes', cursive;
+            font-weight: 400;
+        }
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+        .font-serif {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+        .font-sans {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Shimmering Olive & Gold Couple Name Effect */
+        .couple-name-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2.85rem, 9vw, 3.85rem);
+            line-height: 1.18;
+            background: linear-gradient(
+                110deg,
+                #2A4221 0%,
+                #3B572F 30%,
+                #B38728 50%,
+                #3B572F 70%,
+                #2A4221 100%
+            );
+            background-size: 220% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: var(--olive-dark);
+            animation: nameShimmer 6s ease-in-out infinite;
+            padding: 4px 10px;
+            text-shadow: 0 2px 10px rgba(197, 155, 39, 0.12);
+        }
+
+        @keyframes nameShimmer {
+            0% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+            100% { background-position: 0% center; }
+        }
+
+        /* Metallic Gold Button with Light Sweep */
+        .gold-btn {
+            position: relative;
+            z-index: 30;
+            pointer-events: auto;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #B68924 0%, #DFBD59 35%, #FFF2B8 50%, #C89B32 70%, #966F15 100%);
+            background-size: 200% auto;
+            color: #241905;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 999px;
+            border: 1.5px solid #FFF4C8;
+            box-shadow: 0 8px 24px rgba(150, 111, 21, 0.38), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .gold-btn:hover, .gold-btn:active {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 12px 28px rgba(150, 111, 21, 0.5);
+        }
+
+        .gold-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -70%;
+            width: 45%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.65) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(25deg);
+            animation: sweepShine 3.4s infinite;
+        }
+
+        @keyframes sweepShine {
+            0% { left: -70%; }
+            45%, 100% { left: 135%; }
+        }
+
+        /* Mobile Card Container (Matches Reference Image Card Proportions) */
+        .invitation-shell {
+            position: relative;
+            width: 100%;
+            max-width: 470px;
+            min-height: 100vh;
+            background-color: var(--parchment-light);
+            background-image:
+                radial-gradient(circle at 50% 15%, rgba(255, 250, 238, 0.9) 0%, rgba(244, 236, 224, 0.85) 60%, rgba(235, 221, 198, 0.95) 100%),
+                repeating-linear-gradient(45deg, rgba(197, 155, 39, 0.025) 0px, rgba(197, 155, 39, 0.025) 2px, transparent 2px, transparent 8px);
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.75);
+            overflow: hidden;
+        }
+
+        /* Continuous Inner Double Gold Frame */
+        .invitation-shell::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            bottom: 12px;
+            left: 12px;
+            right: 12px;
+            border: 1.5px solid rgba(197, 155, 39, 0.55);
+            pointer-events: none;
+            z-index: 25;
+        }
+
+        .invitation-shell::after {
+            content: '';
+            position: absolute;
+            top: 17px;
+            bottom: 17px;
+            left: 17px;
+            right: 17px;
+            border: 0.8px solid rgba(197, 155, 39, 0.32);
+            pointer-events: none;
+            z-index: 25;
+        }
+
+        /* ==========================================
+           OPENING GATEFOLD COVER OVERLAY
+           ========================================== */
+        #gatefold-cover {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(20, 16, 11, 0.92);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.85s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.85s;
+        }
+
+        #gatefold-cover.opened {
+            opacity: 0;
+            transform: scale(1.06) translateY(-20px);
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .cover-card {
+            position: relative;
+            width: 100%;
+            max-width: 470px;
+            height: 100%;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 35%, #FFFDF8 0%, #F6EFE2 65%, #EADBC3 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 36px 26px;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .cover-frame-outer {
+            position: absolute;
+            inset: 14px;
+            border: 2px solid rgba(197, 155, 39, 0.6);
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .cover-frame-inner {
+            position: absolute;
+            inset: 20px;
+            border: 1px solid rgba(197, 155, 39, 0.35);
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Monogram Wax / Mandala Seal */
+        .monogram-seal-wrapper {
+            position: relative;
+            z-index: 30;
+            pointer-events: auto;
+            cursor: pointer;
+            width: 118px;
+            height: 118px;
+            margin: 14px auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .monogram-ring-spin {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1.5px dashed var(--gold-metallic);
+            animation: slowSpin 26s linear infinite;
+            pointer-events: none;
+        }
+
+        .monogram-circle {
+            position: relative;
+            width: 102px;
+            height: 102px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #FFFDF7 0%, #F4E6C3 65%, #D9B766 100%);
+            border: 2px solid var(--gold-metallic);
+            box-shadow: 0 8px 25px rgba(142, 106, 20, 0.25), inset 0 0 12px rgba(197, 155, 39, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .monogram-circle::before {
+            content: '';
+            position: absolute;
+            width: 86px;
+            height: 86px;
+            border-radius: 50%;
+            border: 1px dashed rgba(142, 106, 20, 0.45);
+            pointer-events: none;
+        }
+
+        .monogram-initials {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.45rem;
+            line-height: 1;
+            white-space: nowrap;
+            color: var(--olive-dark);
+            text-align: center;
+            display: block;
+            padding: 2px 4px;
+        }
+
+        .monogram-sublabel {
+            font-family: 'Cinzel', serif;
+            font-size: 0.45rem;
+            letter-spacing: 0.18em;
+            color: var(--gold-dark);
+            margin-top: 5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        /* ==========================================
+           FLORAL TORAN, MANDALA & DIYA GRAPHICS
+           ========================================== */
+        .top-mandala-watermark {
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 210px;
+            height: 110px;
+            pointer-events: none;
+            z-index: 3;
+            opacity: 0.42;
+        }
+
+        /* Full-width symmetrical Thoranam header container */
+        .thoranam-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            pointer-events: none;
+            z-index: 10;
+            padding: 2px;
+        }
+
+        .thoranam-left {
+            width: 48%;
+            max-width: 205px;
+            height: auto;
+            display: block;
+            transform-origin: top left;
+            animation: swayLeft 5.5s ease-in-out infinite;
+            filter: drop-shadow(0 4px 6px rgba(60, 40, 10, 0.14));
+        }
+
+        .thoranam-right {
+            width: 48%;
+            max-width: 205px;
+            height: auto;
+            display: block;
+            transform-origin: top right;
+            animation: swayRight 5.5s ease-in-out infinite;
+            filter: drop-shadow(0 4px 6px rgba(60, 40, 10, 0.14));
+        }
+
+        @keyframes swayLeft {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(1.1deg); }
+        }
+
+        @keyframes swayRight {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-1.1deg); }
+        }
+
+        /* Flickering Diya Corners */
+        .diya-corner-left {
+            position: absolute;
+            bottom: 14px;
+            left: 14px;
+            width: 125px;
+            height: 170px;
+            pointer-events: none;
+            z-index: 6;
+        }
+
+        .diya-corner-right {
+            position: absolute;
+            bottom: 14px;
+            right: 14px;
+            width: 125px;
+            height: 170px;
+            pointer-events: none;
+            z-index: 6;
+            transform: scaleX(-1);
+        }
+
+        .diya-flame-anim {
+            transform-origin: 55px 115px;
+            animation: flameFlicker 1.7s ease-in-out infinite alternate;
+        }
+
+        @keyframes flameFlicker {
+            0% { transform: scale(1) rotate(-2deg); opacity: 0.94; }
+            50% { transform: scale(1.06, 1.12) rotate(2deg); opacity: 1; }
+            100% { transform: scale(0.96, 1.04) rotate(-1deg); opacity: 0.9; }
+        }
+
+        @keyframes slowSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ==========================================
+           CARD SECTIONS & HERO LAYOUT
+           ========================================== */
+        .card-section {
+            position: relative;
+            padding: 44px 28px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            padding: 155px 28px 46px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .intro-subtitle {
+            font-size: 1.18rem;
+            color: var(--olive-medium);
+            letter-spacing: 0.04em;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .and-flourish-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 8px 0;
+        }
+
+        .and-script {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.45rem;
+            color: var(--olive-medium);
+        }
+
+        .emotional-message-box {
+            max-width: 340px;
+            margin: 24px auto 0;
+            padding: 16px 12px;
+            border-top: 1px solid rgba(197, 155, 39, 0.35);
+            border-bottom: 1px solid rgba(197, 155, 39, 0.35);
+        }
+
+        .emotional-quote {
+            font-size: 1.16rem;
+            font-style: italic;
+            line-height: 1.68;
+            color: var(--olive-dark);
+        }
+
+        /* ==========================================
+           SCROLL TO EXPLORE INDICATOR (ONLY ELEMENT AFTER MESSAGE)
+           ========================================== */
+        .scroll-explore-box {
+            position: relative;
+            z-index: 20;
+            margin-top: 26px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--olive-dark);
+            cursor: pointer;
+        }
+
+        .scroll-explore-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-bottom: 10px;
+        }
+
+        .scroll-arrow-circle {
+            position: relative;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFFDF7, #F2E3C2);
+            border: 1.5px solid var(--gold-metallic);
+            box-shadow: 0 6px 18px rgba(142, 106, 20, 0.24);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: arrowFloat 2s ease-in-out infinite;
+        }
+
+        .scroll-arrow-pulse {
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            border: 1px solid rgba(197, 155, 39, 0.55);
+            animation: ringPulse 2.2s infinite;
+        }
+
+        @keyframes arrowFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(7px); }
+        }
+
+        @keyframes ringPulse {
+            0% { transform: scale(0.95); opacity: 0.85; }
+            100% { transform: scale(1.38); opacity: 0; }
+        }
+
+        /* Ornate Section Divider */
+        .ornate-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 34px;
+            opacity: 0.8;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-metallic), transparent);
+        }
+
+        /* ==========================================
+           SECTION 2: SCRATCH TO REVEAL DATE
+           ========================================== */
+        .section-eyebrow {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-bottom: 6px;
+        }
+
+        .section-script-heading {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.55rem;
+            color: var(--olive-dark);
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        .scratch-card-frame {
+            position: relative;
+            width: 100%;
+            max-width: 330px;
+            height: 215px;
+            margin: 18px auto 14px;
+            border-radius: 20px;
+            padding: 4px;
+            background: linear-gradient(135deg, #C59B27, #FFF2B8, #9A7414);
+            box-shadow: 0 14px 32px rgba(90, 70, 50, 0.2);
+            user-select: none;
+        }
+
+        .scratch-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            background: radial-gradient(circle, #FFFDF9 0%, #F5E9D0 100%);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            border: 1px solid rgba(197, 155, 39, 0.4);
+        }
+
+        .revealed-date-badge {
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            background: rgba(197, 155, 39, 0.14);
+            padding: 4px 14px;
+            border-radius: 999px;
+            margin-bottom: 8px;
+        }
+
+        .revealed-date-big {
+            font-family: 'Cinzel', serif;
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: var(--olive-dark);
+            letter-spacing: 0.1em;
+            line-height: 1.15;
+        }
+
+        .revealed-date-full {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--bronze-text);
+            margin-top: 4px;
+        }
+
+        .revealed-time-pill {
+            margin-top: 10px;
+            padding: 6px 18px;
+            border-radius: 999px;
+            border: 1px solid var(--gold-metallic);
+            background: #FFFDF8;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--olive-dark);
+            letter-spacing: 0.08em;
+        }
+
+        #scratch-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            cursor: grab;
+            touch-action: none;
+            z-index: 15;
+            transition: opacity 0.65s ease;
+        }
+
+        /* ==========================================
+           SECTION 3: COUNTDOWN TIMER
+           ========================================== */
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 350px;
+            margin: 18px auto 10px;
+        }
+
+        .countdown-box {
+            background: linear-gradient(180deg, #FFFDF8 0%, #F3E6CE 100%);
+            border: 1.5px solid rgba(197, 155, 39, 0.65);
+            border-radius: 14px;
+            padding: 14px 4px;
+            box-shadow: 0 6px 15px rgba(142, 106, 20, 0.12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .countdown-number {
+            font-family: 'Cinzel', serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--olive-dark);
+            line-height: 1.1;
+        }
+
+        .countdown-unit {
+            font-family: 'Cinzel', serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-top: 5px;
+        }
+
+        /* ==========================================
+           SECTION 4: VENUE & LOCATION (LAST)
+           ========================================== */
+        .venue-card {
+            background: linear-gradient(180deg, rgba(255, 253, 248, 0.95) 0%, rgba(243, 231, 207, 0.9) 100%);
+            border: 1.5px solid rgba(197, 155, 39, 0.65);
+            border-radius: 22px;
+            padding: 28px 20px;
+            max-width: 355px;
+            margin: 16px auto 0;
+            box-shadow: 0 12px 28px rgba(90, 70, 50, 0.12);
+        }
+
+        .venue-icon-badge {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #FFFDF8 0%, #F1DFB6 100%);
+            border: 1.5px solid var(--gold-metallic);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            color: var(--olive-dark);
+        }
+
+        .venue-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.32rem;
+            font-weight: 700;
+            color: var(--olive-dark);
+            letter-spacing: 0.06em;
+            margin-bottom: 8px;
+        }
+
+        .venue-detail-text {
+            font-size: 1.08rem;
+            color: var(--bronze-text);
+            line-height: 1.55;
+            margin-bottom: 18px;
+        }
+
+        /* ==========================================
+           FLOATING AUDIO PLAY / PAUSE ICON BUTTON (BOTTOM RIGHT)
+           ========================================== */
+        .floating-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-btn {
+            width: 48px;
+            height: 48px;
+            padding: 0;
+            border-radius: 50%;
+            background: rgba(250, 246, 238, 0.96);
+            backdrop-filter: blur(8px);
+            border: 1.5px solid #C59B27;
+            color: var(--olive-dark);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(142, 106, 20, 0.35), 0 0 0 3px rgba(197, 155, 39, 0.16);
+            cursor: pointer;
+            transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 8px 24px rgba(142, 106, 20, 0.48), 0 0 0 4px rgba(197, 155, 39, 0.24);
+        }
+
+        .control-btn:active {
+            transform: scale(0.94);
+        }
+
+        .control-btn.is-playing {
+            animation: audioPulseRing 2.2s infinite;
+        }
+
+        @keyframes audioPulseRing {
+            0% { box-shadow: 0 6px 20px rgba(142, 106, 20, 0.35), 0 0 0 0 rgba(197, 155, 39, 0.45); }
+            70% { box-shadow: 0 6px 20px rgba(142, 106, 20, 0.35), 0 0 0 10px rgba(197, 155, 39, 0); }
+            100% { box-shadow: 0 6px 20px rgba(142, 106, 20, 0.35), 0 0 0 0 rgba(197, 155, 39, 0); }
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.85s ease-out, transform 0.85s ease-out;
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Full-Screen Petal Burst Canvas */
+        #petal-canvas {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 120;
+        }
+    </style>
+</head>
+<body class="locked">
+
+    <!-- REUSABLE TRADITIONAL INDIAN SVG DEFINITIONS (Multi-Layered Marigold Thoranam, Mango Leaves, Mandala, Flickering Diyas) -->
+    <svg width="0" height="0" style="position:absolute; visibility:hidden;" aria-hidden="true">
+        <defs>
+            <!-- Rich Multi-Layered Bright Yellow Marigold (#FFC107 / #FDE047) -->
+            <g id="marigold-yellow">
+                <circle cx="0" cy="0" r="16" fill="#D97706"/>
+                <g fill="#F59E0B">
+                    <circle cx="0" cy="-11" r="6.5"/><circle cx="8" cy="-8" r="6.5"/>
+                    <circle cx="11" cy="0" r="6.5"/><circle cx="8" cy="8" r="6.5"/>
+                    <circle cx="0" cy="11" r="6.5"/><circle cx="-8" cy="8" r="6.5"/>
+                    <circle cx="-11" cy="0" r="6.5"/><circle cx="-8" cy="-8" r="6.5"/>
+                </g>
+                <g fill="#FFC107">
+                    <circle cx="4" cy="-9" r="5.5"/><circle cx="9" cy="-4" r="5.5"/>
+                    <circle cx="9" cy="4" r="5.5"/><circle cx="4" cy="9" r="5.5"/>
+                    <circle cx="-4" cy="9" r="5.5"/><circle cx="-9" cy="4" r="5.5"/>
+                    <circle cx="-9" cy="-4" r="5.5"/><circle cx="-4" cy="-9" r="5.5"/>
+                </g>
+                <g fill="#FFD54F">
+                    <circle cx="0" cy="-5" r="4.8"/><circle cx="5" cy="0" r="4.8"/>
+                    <circle cx="0" cy="5" r="4.8"/><circle cx="-5" cy="0" r="4.8"/>
+                    <circle cx="3.5" cy="-3.5" r="4.2"/><circle cx="-3.5" cy="-3.5" r="4.2"/>
+                    <circle cx="3.5" cy="3.5" r="4.2"/><circle cx="-3.5" cy="3.5" r="4.2"/>
+                </g>
+                <circle cx="0" cy="0" r="3.5" fill="#F59E0B"/>
+                <circle cx="0" cy="0" r="1.8" fill="#B45309"/>
+            </g>
+
+            <!-- Rich Multi-Layered Golden-Orange Marigold (#FF9800 / #EA580C) -->
+            <g id="marigold-orange">
+                <circle cx="0" cy="0" r="15.5" fill="#9A3412"/>
+                <g fill="#EA580C">
+                    <circle cx="0" cy="-10.5" r="6.2"/><circle cx="7.5" cy="-7.5" r="6.2"/>
+                    <circle cx="10.5" cy="0" r="6.2"/><circle cx="7.5" cy="7.5" r="6.2"/>
+                    <circle cx="0" cy="10.5" r="6.2"/><circle cx="-7.5" cy="7.5" r="6.2"/>
+                    <circle cx="-10.5" cy="0" r="6.2"/><circle cx="-7.5" cy="-7.5" r="6.2"/>
+                </g>
+                <g fill="#FF9800">
+                    <circle cx="4" cy="-8.5" r="5.2"/><circle cx="8.5" cy="-4" r="5.2"/>
+                    <circle cx="8.5" cy="4" r="5.2"/><circle cx="4" cy="8.5" r="5.2"/>
+                    <circle cx="-4" cy="8.5" r="5.2"/><circle cx="-8.5" cy="4" r="5.2"/>
+                    <circle cx="-8.5" cy="-4" r="5.2"/><circle cx="-4" cy="-8.5" r="5.2"/>
+                </g>
+                <g fill="#FFB74D">
+                    <circle cx="0" cy="-4.5" r="4.5"/><circle cx="4.5" cy="0" r="4.5"/>
+                    <circle cx="0" cy="4.5" r="4.5"/><circle cx="-4.5" cy="0" r="4.5"/>
+                </g>
+                <circle cx="0" cy="0" r="3.2" fill="#C2410C"/>
+            </g>
+
+            <!-- Deep Vermilion / Coral-Red Marigold (#E65100 / #D84315) -->
+            <g id="marigold-vermilion">
+                <circle cx="0" cy="0" r="15" fill="#7C2D12"/>
+                <g fill="#C2410C">
+                    <circle cx="0" cy="-10" r="6"/><circle cx="7" cy="-7" r="6"/>
+                    <circle cx="10" cy="0" r="6"/><circle cx="7" cy="7" r="6"/>
+                    <circle cx="0" cy="10" r="6"/><circle cx="-7" cy="7" r="6"/>
+                    <circle cx="-10" cy="0" r="6"/><circle cx="-7" cy="-7" r="6"/>
+                </g>
+                <g fill="#E65100">
+                    <circle cx="3.8" cy="-8" r="5"/><circle cx="8" cy="-3.8" r="5"/>
+                    <circle cx="8" cy="3.8" r="5"/><circle cx="3.8" cy="8" r="5"/>
+                    <circle cx="-3.8" cy="8" r="5"/><circle cx="-8" cy="3.8" r="5"/>
+                    <circle cx="-8" cy="-3.8" r="5"/><circle cx="-3.8" cy="-8" r="5"/>
+                </g>
+                <g fill="#FF7043">
+                    <circle cx="0" cy="-4.2" r="4.2"/><circle cx="4.2" cy="0" r="4.2"/>
+                    <circle cx="0" cy="4.2" r="4.2"/><circle cx="-4.2" cy="0" r="4.2"/>
+                </g>
+                <circle cx="0" cy="0" r="3" fill="#7C2D12"/>
+            </g>
+
+            <!-- Unopened Golden-Orange Marigold / Tulip Bud with Green Calyx -->
+            <g id="hanging-flower-bud">
+                <path d="M-6,4 C-9,14 -4,25 0,28 C4,25 9,14 6,4 Z" fill="#F59E0B"/>
+                <path d="M-3,5 C-5,14 -2,23 0,27 C2,23 5,14 3,5 Z" fill="#FF9800"/>
+                <path d="M-1,6 L-1,24" stroke="#FDE047" stroke-width="1" opacity="0.7"/>
+                <!-- Green Calyx Cup -->
+                <path d="M-6,5 Q0,11 6,5 L4,-1 Q0,2 -4,-1 Z" fill="#3E6B2C"/>
+                <path d="M-6,5 L-8,9 M6,5 L8,9 M0,7 L0,11" stroke="#2E5220" stroke-width="1.3" stroke-linecap="round"/>
+            </g>
+
+            <!-- Detailed Reference-Matched Corner Garland (Left Orientation) -->
+            <g id="corner-garland-left-graphic">
+                <!-- Top-Right Extending Leafy Sprig -->
+                <path d="M135,18 Q165,14 192,4" fill="none" stroke="#3E6B2C" stroke-width="2" stroke-linecap="round"/>
+                <path d="M155,14 Q170,2 184,5 Q170,15 155,14 Z" fill="#4D7C38"/>
+                <path d="M142,22 Q162,32 176,46 Q155,40 142,22 Z" fill="#3E6B2C"/>
+                <path d="M132,26 Q142,48 136,68 Q125,48 132,26 Z" fill="#5C8D44"/>
+
+                <!-- Outer Arching Green Leaf Backing -->
+                <path d="M14,22 Q4,45 8,62 Q20,45 14,22 Z" fill="#2E5220"/>
+                <path d="M10,68 Q2,90 8,108 Q18,90 10,68 Z" fill="#3E6B2C"/>
+                <path d="M26,12 Q45,2 62,8 Q45,18 26,12 Z" fill="#2E5220"/>
+
+                <!-- 3 Hanging Leafy Vines with Golden Buds (Matching Reference Image) -->
+                <!-- Vine 1 (Upper Diagonal Branch + Bud) -->
+                <path d="M62,38 Q95,58 124,78" fill="none" stroke="#3E6B2C" stroke-width="2" stroke-linecap="round"/>
+                <path d="M78,48 Q92,40 102,46 Q88,54 78,48 Z" fill="#4D7C38"/>
+                <path d="M76,50 Q80,64 90,70 Q86,56 76,50 Z" fill="#3E6B2C"/>
+                <path d="M96,60 Q110,52 120,58 Q106,66 96,60 Z" fill="#5C8D44"/>
+                <path d="M94,62 Q98,76 108,82 Q104,68 94,62 Z" fill="#3E6B2C"/>
+                <g transform="translate(124, 78) rotate(-52)">
+                    <use href="#hanging-flower-bud"/>
+                </g>
+
+                <!-- Vine 2 (Middle Hanging Branch + Bud) -->
+                <path d="M50,48 Q75,85 88,125" fill="none" stroke="#3E6B2C" stroke-width="2" stroke-linecap="round"/>
+                <path d="M62,68 Q76,65 82,74 Q68,78 62,68 Z" fill="#4D7C38"/>
+                <path d="M60,72 Q54,86 60,96 Q66,84 60,72 Z" fill="#3E6B2C"/>
+                <path d="M74,94 Q88,92 94,102 Q80,104 74,94 Z" fill="#5C8D44"/>
+                <path d="M72,98 Q66,112 72,122 Q78,110 72,98 Z" fill="#3E6B2C"/>
+                <g transform="translate(88, 125) rotate(-18)">
+                    <use href="#hanging-flower-bud"/>
+                </g>
+
+                <!-- Vine 3 (Lower Inner Hanging Branch + Bud) -->
+                <path d="M36,75 Q52,135 66,182" fill="none" stroke="#3E6B2C" stroke-width="2" stroke-linecap="round"/>
+                <!-- Inner Long Leafy Vine Stem -->
+                <path d="M32,68 Q45,148 48,220" fill="none" stroke="#4D7C38" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M40,105 Q54,102 58,112 Q44,114 40,105 Z" fill="#5C8D44"/>
+                <path d="M38,118 Q28,128 32,138 Q42,128 38,118 Z" fill="#3E6B2C"/>
+                <path d="M44,136 Q58,134 62,144 Q48,146 44,136 Z" fill="#4D7C38"/>
+                <path d="M42,150 Q32,160 36,170 Q46,160 42,150 Z" fill="#3E6B2C"/>
+                <path d="M46,168 Q56,178 54,192 Q44,182 46,168 Z" fill="#5C8D44"/>
+                <path d="M46,184 Q36,196 40,210 Q50,198 46,184 Z" fill="#3E6B2C"/>
+                <g transform="translate(66, 182) rotate(-10)">
+                    <use href="#hanging-flower-bud"/>
+                </g>
+
+                <!-- Bottom Trailing Leafy Tail Below Vertical Marigold Strand -->
+                <path d="M24,230 L24,312" stroke="#3E6B2C" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M24,242 Q12,250 14,260 Q24,252 24,242 Z" fill="#3E6B2C"/>
+                <path d="M24,242 Q36,250 34,260 Q24,252 24,242 Z" fill="#4D7C38"/>
+                <path d="M24,258 Q12,266 14,276 Q24,268 24,258 Z" fill="#4D7C38"/>
+                <path d="M24,258 Q36,266 34,276 Q24,268 24,258 Z" fill="#3E6B2C"/>
+                <path d="M24,274 Q14,282 16,292 Q24,284 24,274 Z" fill="#3E6B2C"/>
+                <path d="M24,274 Q34,282 32,292 Q24,284 24,274 Z" fill="#5C8D44"/>
+                <path d="M24,290 Q16,298 18,306 Q24,298 24,290 Z" fill="#4D7C38"/>
+                <path d="M24,290 Q32,298 30,306 Q24,298 24,290 Z" fill="#3E6B2C"/>
+                <path d="M24,306 C21,314 24,322 24,322 C24,322 27,314 24,306 Z" fill="#D97706"/>
+
+                <!-- Top Horizontal Arching Marigold Row -->
+                <use href="#marigold-orange" x="136" y="18"/>
+                <use href="#marigold-vermilion" x="114" y="25"/>
+                <use href="#marigold-yellow" x="90" y="28"/>
+                <use href="#marigold-yellow" x="66" y="29"/>
+                <use href="#marigold-vermilion" x="44" y="24"/>
+
+                <!-- Left Vertical Hanging Marigold Column (8 Blossoms) -->
+                <use href="#marigold-yellow" x="24" y="24"/>
+                <use href="#marigold-yellow" x="24" y="50"/>
+                <use href="#marigold-vermilion" x="24" y="78"/>
+                <use href="#marigold-orange" x="24" y="106"/>
+                <use href="#marigold-yellow" x="24" y="134"/>
+                <use href="#marigold-vermilion" x="24" y="162"/>
+                <use href="#marigold-yellow" x="24" y="190"/>
+                <use href="#marigold-orange" x="24" y="218"/>
+            </g>
+
+            <!-- Traditional Terracotta Diya + Wheat Stalks + Pink Lotus Bud -->
+            <g id="diya-corner-graphic">
+                <!-- Soft Wheat / Floral Stalk Rising Behind Diya -->
+                <path d="M26,145 Q18,85 30,15" fill="none" stroke="#C59B6D" stroke-width="1.3" opacity="0.65"/>
+                <ellipse cx="20" cy="95" rx="4" ry="9" transform="rotate(-25 20 95)" fill="#DEC09A" opacity="0.7"/>
+                <ellipse cx="32" cy="82" rx="4" ry="9" transform="rotate(25 32 82)" fill="#DEC09A" opacity="0.7"/>
+                <ellipse cx="19" cy="65" rx="4" ry="9" transform="rotate(-25 19 65)" fill="#DEC09A" opacity="0.7"/>
+                <ellipse cx="33" cy="52" rx="4" ry="9" transform="rotate(25 33 52)" fill="#DEC09A" opacity="0.7"/>
+                <ellipse cx="22" cy="36" rx="3.5" ry="8" transform="rotate(-20 22 36)" fill="#DEC09A" opacity="0.7"/>
+                <ellipse cx="30" cy="18" rx="3.5" ry="8" transform="rotate(10 30 18)" fill="#DEC09A" opacity="0.7"/>
+
+                <!-- Green Stem & Leaves at Base -->
+                <path d="M25,145 Q15,115 22,90" fill="none" stroke="#4D6B3C" stroke-width="1.6"/>
+                <path d="M20,122 Q8,116 10,106 Q21,110 20,122 Z" fill="#4D6B3C"/>
+                <path d="M22,106 Q34,100 32,90 Q21,95 22,106 Z" fill="#5E7E4B"/>
+
+                <!-- Pink Lotus Bud Next to Diya -->
+                <g transform="translate(95, 146) rotate(18)">
+                    <path d="M-12,0 L0,0" stroke="#4D6B3C" stroke-width="2"/>
+                    <path d="M0,-7 C10,-9 18,0 18,0 C18,0 10,9 0,7 Z" fill="#E5989B"/>
+                    <path d="M2,-4 C10,-5 16,0 16,0 C16,0 10,5 2,4 Z" fill="#D07276"/>
+                    <path d="M-2,-5 C3,-2 3,2 -2,5" fill="none" stroke="#4D6B3C" stroke-width="1.8"/>
+                </g>
+
+                <!-- Glowing Halo Behind Diya Flame -->
+                <circle cx="55" cy="108" r="26" fill="#FDE047" opacity="0.22"/>
+                <circle cx="55" cy="108" r="15" fill="#F59E0B" opacity="0.3"/>
+
+                <!-- Animated Diya Flame -->
+                <g class="diya-flame-anim">
+                    <path d="M55,78 C45,95 46,112 55,118 C64,112 65,95 55,78 Z" fill="#F59E0B"/>
+                    <path d="M55,86 C49,98 50,110 55,116 C60,110 61,98 55,86 Z" fill="#FEF08A"/>
+                    <path d="M55,96 C52,104 52,111 55,115 C58,111 58,104 55,96 Z" fill="#FFFFFF"/>
+                </g>
+
+                <!-- Terracotta Clay Diya Bowl -->
+                <path d="M18,124 Q55,134 92,124 C86,148 68,156 55,156 C42,156 24,148 18,124 Z" fill="#8C3B20"/>
+                <ellipse cx="55" cy="124" rx="37" ry="6.5" fill="#5C2310" stroke="#D4AF37" stroke-width="1.2"/>
+                <!-- Decorative Gold Dots & Loops on Diya -->
+                <path d="M24,132 Q32,142 40,133 Q48,143 55,134 Q62,143 70,133 Q78,142 86,132" fill="none" stroke="#FBBF24" stroke-width="1.3"/>
+                <circle cx="32" cy="133" r="1.5" fill="#FEF08A"/>
+                <circle cx="44" cy="135" r="1.5" fill="#FEF08A"/>
+                <circle cx="55" cy="136" r="1.5" fill="#FEF08A"/>
+                <circle cx="66" cy="135" r="1.5" fill="#FEF08A"/>
+                <circle cx="78" cy="133" r="1.5" fill="#FEF08A"/>
+            </g>
+
+            <!-- Top Center Intricate Mandala Half-Circle -->
+            <g id="mandala-half">
+                <circle cx="110" cy="0" r="102" fill="none" stroke="#C59B27" stroke-width="1"/>
+                <circle cx="110" cy="0" r="95" fill="none" stroke="#C59B27" stroke-width="0.8" stroke-dasharray="3 3"/>
+                <circle cx="110" cy="0" r="82" fill="none" stroke="#C59B27" stroke-width="1.2"/>
+                <circle cx="110" cy="0" r="66" fill="none" stroke="#C59B27" stroke-width="1"/>
+                <circle cx="110" cy="0" r="50" fill="none" stroke="#C59B27" stroke-width="0.8" stroke-dasharray="2 2"/>
+                <circle cx="110" cy="0" r="34" fill="none" stroke="#C59B27" stroke-width="1.2"/>
+                <circle cx="110" cy="0" r="18" fill="none" stroke="#C59B27" stroke-width="1"/>
+                <!-- Lotus Petal Rays -->
+                <path d="M110,0 L110,102 M110,0 L145,96 M110,0 L176,78 M110,0 L198,51 M110,0 L210,18 M110,0 L75,96 M110,0 L44,78 M110,0 L22,51 M110,0 L10,18" stroke="#C59B27" stroke-width="0.7"/>
+                <path d="M10,8 Q20,25 32,20 Q35,40 50,35 Q55,55 72,48 Q80,68 96,58 Q110,75 124,58 Q140,68 148,48 Q165,55 170,35 Q185,40 188,20 Q200,25 210,8" fill="none" stroke="#C59B27" stroke-width="1.1"/>
+            </g>
+        </defs>
+    </svg>
+
+    <!-- Full-Screen Flower Petal Pop Canvas -->
+    <canvas id="petal-canvas"></canvas>
+
+    <!-- Built-In Audio Element (Plays song.mp3 if present, with automatic Web Audio Saxophone/Brass Rock-Fusion synth of the uploaded track) -->
+    <audio id="bg-audio" loop preload="auto">
+        <source src="song.mp3" type="audio/mpeg">
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Bottom-Right Circular Play / Pause Audio Toggle Button (Icon Only) -->
+    <div class="floating-controls">
+        <button type="button" id="music-toggle-btn" onclick="toggleAudio()" class="control-btn" aria-label="Toggle Background Music">
+            <!-- Play Icon (Shown when Music is Paused/Off) -->
+            <svg id="icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-left: 2px;">
+                <polygon points="6 4 20 12 6 20 6 4"></polygon>
+            </svg>
+            <!-- Pause Icon (Shown when Music is Playing) -->
+            <svg id="icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+                <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+            </svg>
+        </button>
+    </div>
+
+    <!-- ==========================================
+         1. OPENING GATEFOLD INVITATION COVER (NO DATE/VENUE SPOILERS)
+         ========================================== -->
+    <div id="gatefold-cover">
+        <div class="cover-card">
+            <div class="cover-frame-outer"></div>
+            <div class="cover-frame-inner"></div>
+
+            <!-- Mandala Watermark -->
+            <svg class="top-mandala-watermark" viewBox="0 0 220 115">
+                <use href="#mandala-half"/>
+            </svg>
+
+            <!-- Symmetrical Left & Right Marigold Thoranam Header -->
+            <div class="thoranam-header">
+                <svg class="thoranam-left" viewBox="0 0 205 328">
+                    <use href="#corner-garland-left-graphic"/>
+                </svg>
+                <svg class="thoranam-right" viewBox="0 0 205 328">
+                    <g transform="translate(205, 0) scale(-1, 1)">
+                        <use href="#corner-garland-left-graphic"/>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Center Cover Content -->
+            <div style="position:relative; z-index:30; pointer-events:auto; max-width:340px; padding-top:38px;">
+                <p class="section-eyebrow" style="margin-bottom:8px;">॥ Shree Ganeshaya Namah ॥</p>
+
+                <!-- Ornate H & S Monogram Wax/Mandala Seal (Also Tappable to Open) -->
+                <div id="wax-seal-btn" class="monogram-seal-wrapper" onclick="openInvitation()" role="button" tabindex="0" aria-label="Tap H and S seal to open invitation">
+                    <div class="monogram-ring-spin"></div>
+                    <div class="monogram-circle">
+                        <span class="monogram-initials">H &amp; S</span>
+                        <span class="monogram-sublabel">Engagement</span>
+                    </div>
+                </div>
+
+                <p class="font-serif" style="font-style:italic; font-size:1.05rem; color:var(--olive-medium); margin-bottom:6px;">
+                    Together with our families, we invite you to celebrate the engagement of
+                </p>
+
+                <h1 class="couple-name-title" style="font-size:2.75rem;">Hariharan M</h1>
+                <div class="font-script" style="font-size:1.85rem; color:var(--gold-dark); margin:-4px 0;">&amp;</div>
+                <h1 class="couple-name-title" style="font-size:2.75rem; margin-bottom:18px;">Sowmiya M</h1>
+
+                <!-- Shimmering Tap to Open Button -->
+                <button type="button" id="open-invite-btn" onclick="openInvitation()" class="gold-btn">
+                    <span>Tap to Open Invitation</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+
+                <p class="font-sans" style="font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--bronze-text); opacity:0.75; margin-top:12px;">
+                    Tap to unveil with music &amp; blessings
+                </p>
+            </div>
+
+            <!-- Bottom Glowing Diyas on Cover -->
+            <svg class="diya-corner-left" viewBox="0 0 120 165">
+                <use href="#diya-corner-graphic"/>
+            </svg>
+            <svg class="diya-corner-right" viewBox="0 0 120 165">
+                <use href="#diya-corner-graphic"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         MAIN MOBILE INVITATION CONTAINER
+         ========================================== -->
+    <main id="main-invitation" class="invitation-shell">
+
+        <!-- ==========================================
+             SECTION 1: COUPLE NAME, MESSAGE & SCROLL INDICATOR ONLY
+             (Strictly NO Couple Photo, NO Date, and NO Venue shown here)
+             ========================================== -->
+        <section class="card-section hero-section">
+            <!-- Top Center Mandala Half-Circle -->
+            <svg class="top-mandala-watermark" viewBox="0 0 220 115">
+                <use href="#mandala-half"/>
+            </svg>
+
+            <!-- Symmetrical Left & Right Marigold Thoranam Header -->
+            <div class="thoranam-header">
+                <svg class="thoranam-left" viewBox="0 0 205 328">
+                    <use href="#corner-garland-left-graphic"/>
+                </svg>
+                <svg class="thoranam-right" viewBox="0 0 205 328">
+                    <g transform="translate(205, 0) scale(-1, 1)">
+                        <use href="#corner-garland-left-graphic"/>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Main Couple Content Block -->
+            <div style="position:relative; z-index:15; width:100%; margin-top:24px;">
+                <p class="intro-subtitle">
+                    Join us as we celebrate<br>
+                    the auspicious engagement of
+                </p>
+
+                <!-- Groom Name -->
+                <h2 class="couple-name-title">Hariharan M</h2>
+
+                <!-- Ornate Calligraphic "and" with Flourish -->
+                <div class="and-flourish-row">
+                    <svg width="52" height="16" viewBox="0 0 50 16" fill="none">
+                        <path d="M48,8 C32,1 18,15 2,8" stroke="#9A7414" stroke-width="1.2"/>
+                    </svg>
+                    <span class="and-script">and</span>
+                    <svg width="52" height="16" viewBox="0 0 50 16" fill="none">
+                        <path d="M2,8 C18,1 32,15 48,8" stroke="#9A7414" stroke-width="1.2"/>
+                    </svg>
+                </div>
+
+                <!-- Bride Name -->
+                <h2 class="couple-name-title">Sowmiya M</h2>
+
+                <!-- Emotional Invitation Message -->
+                <div class="emotional-message-box">
+                    <p class="emotional-quote">
+                        “Two souls, one heart, and a lifetime of promises. As we take our first step toward forever, we warmly invite you and your family to bless our engagement ceremony.”
+                    </p>
+                </div>
+            </div>
+
+            <!-- ONLY SCROLL TO EXPLORE WITH ANIMATED DOWN ARROW MARK AFTER MESSAGE -->
+            <a href="#scratch-reveal-section" class="scroll-explore-box" aria-label="Scroll to Explore">
+                <span class="scroll-explore-label">Scroll to Explore</span>
+                <div class="scroll-arrow-circle">
+                    <span class="scroll-arrow-pulse"></span>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2F4726" stroke-width="2.2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 13l-7 7-7-7M19 5l-7 7-7-7"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Flickering Terracotta Diyas at Bottom Left & Right of Hero Section -->
+            <svg class="diya-corner-left" viewBox="0 0 120 165">
+                <use href="#diya-corner-graphic"/>
+            </svg>
+            <svg class="diya-corner-right" viewBox="0 0 120 165">
+                <use href="#diya-corner-graphic"/>
+            </svg>
+        </section>
+
+        <!-- Ornate Gold Divider -->
+        <div class="ornate-divider">
+            <div class="divider-line"></div>
+            <svg width="26" height="26" viewBox="0 0 32 32" fill="#C59B27" style="margin:0 12px;">
+                <path d="M16 3 L19.5 12.5 L29 16 L19.5 19.5 L16 29 L12.5 19.5 L3 16 L12.5 12.5 Z"/>
+            </svg>
+            <div class="divider-line"></div>
+        </div>
+
+        <!-- ==========================================
+             SECTION 2: SCRATCH-TO-REVEAL THE DATE SECTION
+             ========================================== -->
+        <section id="scratch-reveal-section" class="card-section reveal-on-scroll">
+            <p class="section-eyebrow">Interactive Date Reveal</p>
+            <h3 class="section-script-heading">Scratch to Reveal the Date</h3>
+            <p class="font-serif" style="font-style:italic; font-size:1.05rem; color:var(--bronze-text);">
+                Gently rub the golden seal below with your finger to unveil our auspicious Muhurtham
+            </p>
+
+            <!-- Interactive Scratch Card -->
+            <div class="scratch-card-frame">
+                <div class="scratch-card-inner">
+                    <span class="revealed-date-badge">Save The Date</span>
+                    <div class="revealed-date-big">22 . 11 . 2026</div>
+                    <div class="revealed-date-full">Sunday, 22nd November 2026</div>
+                    <div class="revealed-time-pill">Muhurtham: 10:00 AM – 11:00 AM</div>
+                </div>
+                <!-- Metallic Gold Foil Scratch Layer -->
+                <canvas id="scratch-canvas"></canvas>
+            </div>
+
+            <p id="scratch-status" onclick="revealDateDirectly()" class="font-sans" style="font-size:0.75rem; color:var(--gold-dark); font-weight:600; letter-spacing:0.06em; margin-top:8px; cursor:pointer; text-decoration:underline; text-underline-offset:3px;">
+                ✨ Rub across the gold foil (or tap here) to reveal the date!
+            </p>
+        </section>
+
+        <!-- Ornate Gold Divider -->
+        <div class="ornate-divider">
+            <div class="divider-line"></div>
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="#C59B27" style="margin:0 12px;">
+                <path d="M16 3 L19.5 12.5 L29 16 L19.5 19.5 L16 29 L12.5 19.5 L3 16 L12.5 12.5 Z"/>
+            </svg>
+            <div class="divider-line"></div>
+        </div>
+
+        <!-- ==========================================
+             SECTION 3: COUNTDOWN TIMER FOR THE ENGAGEMENT
+             ========================================== -->
+        <section class="card-section reveal-on-scroll" style="padding-top:28px; padding-bottom:32px;">
+            <p class="section-eyebrow">Counting Every Moment</p>
+            <h3 class="section-script-heading">Countdown to Our Engagement</h3>
+
+            <div class="countdown-grid">
+                <div class="countdown-box">
+                    <span id="cd-days" class="countdown-number">08</span>
+                    <span class="countdown-unit">Days</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="cd-hours" class="countdown-number">00</span>
+                    <span class="countdown-unit">Hours</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="cd-mins" class="countdown-number">00</span>
+                    <span class="countdown-unit">Mins</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="cd-secs" class="countdown-number">00</span>
+                    <span class="countdown-unit">Secs</span>
+                </div>
+            </div>
+
+            <p id="countdown-caption" class="font-serif" style="font-style:italic; font-size:1rem; color:var(--bronze-text); margin-top:8px;">
+                Counting down to our sacred ring exchange ceremony
+            </p>
+        </section>
+
+        <!-- Ornate Gold Divider -->
+        <div class="ornate-divider">
+            <div class="divider-line"></div>
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="#C59B27" style="margin:0 12px;">
+                <path d="M16 3 L19.5 12.5 L29 16 L19.5 19.5 L16 29 L12.5 19.5 L3 16 L12.5 12.5 Z"/>
+            </svg>
+            <div class="divider-line"></div>
+        </div>
+
+        <!-- ==========================================
+             SECTION 4: VENUE & LOCATION SECTION (DISPLAYED LAST)
+             ========================================== -->
+        <section class="card-section reveal-on-scroll" style="padding-bottom:175px;">
+            <p class="section-eyebrow">Where We Celebrate</p>
+            <h3 class="section-script-heading">Auspicious Venue</h3>
+
+            <div class="venue-card">
+                <div class="venue-icon-badge">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                </div>
+
+                <h4 class="venue-title">Raghu Saran Mini Hall</h4>
+
+                <p class="venue-detail-text">
+                    <strong>Muhurtham Time:</strong> 10:00 AM – 11:00 AM<br>
+                    <span style="font-style:italic;">Feast &amp; festivities to follow</span>
+                </p>
+
+                <!-- Direct Google Maps Button Only (WhatsApp Share Removed) -->
+                <a href="https://maps.app.goo.gl/tikjdfsW2aPW2iyP8?g_st=aw"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="gold-btn"
+                   style="width:100%;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+                        <line x1="9" y1="3" x2="9" y2="18"/>
+                        <line x1="15" y1="6" x2="15" y2="21"/>
+                    </svg>
+                    <span>Open Location in Google Maps</span>
+                </a>
+            </div>
+
+            <!-- Warm Closing Footer -->
+            <div style="margin-top:34px;">
+                <p class="font-script" style="font-size:2.2rem; color:var(--olive-dark);">
+                    Hariharan &amp; Sowmiya
+                </p>
+                <p class="font-cinzel" style="font-size:0.65rem; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold-dark); margin-top:4px;">
+                    We Await Your Warm Presence
+                </p>
+            </div>
+
+            <!-- Bottom Corner Flickering Diyas Framing the Footer -->
+            <svg class="diya-corner-left" viewBox="0 0 120 165">
+                <use href="#diya-corner-graphic"/>
+            </svg>
+            <svg class="diya-corner-right" viewBox="0 0 120 165">
+                <use href="#diya-corner-graphic"/>
+            </svg>
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         INTERACTIVE JAVASCRIPT (Cover, Scratch Card, Petals, Music, Countdown)
+         ========================================== -->
+    <script>
+        let isInvitationOpened = false;
+        let audioCtx = null;
+        let isMusicPlaying = false;
+        let externalAudioAvailable = false;
+        let stepInterval = null;
+        let stepIdx = 0;
+        let petals = [];
+        let petalAnimId = null;
+        let isDrawing = false;
+        let isDateRevealed = false;
+
+        // Petal burst palette
+        const petalColors = ['#F59E0B', '#FBBF24', '#EA580C', '#D97706', '#E5989B', '#D4AF37', '#FEF08A'];
+
+        // ==========================================
+        // UPLOADED TRACK SCORE: CELEBRATORY SAXOPHONE & BRASS ROCK-FUSION RIFF
+        // Matches the upbeat ~150 BPM syncopated F-minor / F-blues sax & brass hook,
+        // driving rock drum kit, and punchy electric bassline from the uploaded track
+        // ==========================================
+        const N = {
+            F2: 87.31, Ab2: 103.83, Bb2: 116.54, C3: 130.81, Eb3: 155.56,
+            F4: 349.23, G4: 392.00, Ab4: 415.30, A4: 440.00, Bb4: 466.16,
+            B4: 493.88, C5: 523.25, Db5: 554.37, D5: 587.33, Eb5: 622.25,
+            F5: 698.46, G5: 783.99, Ab5: 830.61
+        };
+
+        // 32-step (2-bar, 16th-note) main saxophone lead riff + high-register variation
+        const saxLeadRiff = [
+            // Bar 1: Syncopated brassy saxophone hook (F4 -> G4 -> Ab4 -> A4 -> Bb4 -> C5)
+            { f: N.F4, d: 0.22, slide: N.E4 }, null,
+            { f: N.F4, d: 0.11 }, { f: N.G4, d: 0.18 },
+            { f: N.Ab4, d: 0.22 }, null,
+            { f: N.A4, d: 0.12 }, { f: N.Bb4, d: 0.22 },
+            null, { f: N.C5, d: 0.24, vib: true },
+            null, { f: N.Bb4, d: 0.12 },
+            { f: N.C5, d: 0.14 }, { f: N.Db5, d: 0.14 },
+            { f: N.C5, d: 0.14 }, { f: N.Bb4, d: 0.20 },
+
+            // Bar 2: Expressive sax turnaround & bluesy bend
+            { f: N.Ab4, d: 0.20 }, { f: N.G4, d: 0.14 },
+            { f: N.F4, d: 0.24 }, null,
+            { f: N.Ab4, d: 0.18 }, { f: N.G4, d: 0.14 },
+            { f: N.F4, d: 0.20 }, { f: N.Bb4, d: 0.22 },
+            null, { f: N.C5, d: 0.26, vib: true },
+            null, { f: N.Db5, d: 0.14 },
+            { f: N.C5, d: 0.18 }, { f: N.Bb4, d: 0.18 },
+            { f: N.Ab4, d: 0.14 }, { f: N.G4, d: 0.16 },
+
+            // Bar 3: High-energy upper-octave sax & brass soar (0:15+ section of track)
+            { f: N.C5, d: 0.22 }, null,
+            { f: N.Eb5, d: 0.20 }, { f: N.C5, d: 0.14 },
+            { f: N.Bb4, d: 0.22 }, { f: N.Ab4, d: 0.16 },
+            { f: N.Bb4, d: 0.24, vib: true }, null,
+            { f: N.C5, d: 0.18 }, { f: N.Eb5, d: 0.18 },
+            { f: N.F5, d: 0.28, vib: true }, null,
+            { f: N.Eb5, d: 0.14 }, { f: N.C5, d: 0.14 },
+            { f: N.Bb4, d: 0.18 }, { f: N.Ab4, d: 0.18 },
+
+            // Bar 4: Climax brass run & rhythmic stabs
+            { f: N.Bb4, d: 0.22 }, { f: N.C5, d: 0.16 },
+            { f: N.Eb5, d: 0.24 }, null,
+            { f: N.F5, d: 0.22, vib: true }, { f: N.Eb5, d: 0.14 },
+            { f: N.C5, d: 0.20 }, { f: N.Bb4, d: 0.18 },
+            { f: N.Ab4, d: 0.22 }, { f: N.Bb4, d: 0.16 },
+            { f: N.Ab4, d: 0.16 }, { f: N.G4, d: 0.16 },
+            { f: N.F4, d: 0.32, vib: true }, null,
+            null, { f: N.C5, d: 0.14 }
+        ];
+
+        // Driving rock bass & guitar power-chord root progression (16 steps per bar)
+        const bassProgression = [
+            N.F2, null, N.F2, N.F2, N.Ab2, null, N.Bb2, null,
+            N.C3, null, N.C3, N.Bb2, N.Ab2, null, N.G2 || 98.00, null
+        ];
+
+        // ==========================================
+        // 1. CRITICAL FIX: OPEN INVITATION IMMEDIATELY FIRST
+        // ==========================================
+        function openInvitation(e) {
+            if (e && typeof e.preventDefault === 'function' && e.type === 'touchend') {
+                e.preventDefault();
+            }
+            if (isInvitationOpened) return;
+            isInvitationOpened = true;
+
+            const gatefoldCover = document.getElementById('gatefold-cover');
+            const mainInvitation = document.getElementById('main-invitation');
+
+            // Step 1: Immediately open & hide the cover and unlock scrolling BEFORE any audio or canvas code
+            if (gatefoldCover) {
+                gatefoldCover.classList.add('opened');
+                gatefoldCover.style.opacity = '0';
+                gatefoldCover.style.pointerEvents = 'none';
+                gatefoldCover.style.transform = 'scale(1.06)';
+                setTimeout(() => {
+                    gatefoldCover.style.display = 'none';
+                }, 800);
+            }
+
+            document.body.classList.remove('locked');
+            document.body.style.overflow = 'auto';
+            document.body.style.overflowY = 'auto';
+            document.body.style.height = 'auto';
+
+            if (mainInvitation) {
+                mainInvitation.style.visibility = 'visible';
+                mainInvitation.style.opacity = '1';
+            }
+
+            // Step 2: Safely run audio, petal burst, and scratch card initialization in isolated try/catch blocks
+            try {
+                startAudio();
+            } catch (err) {
+                console.warn('Audio autoplay restricted:', err);
+            }
+
+            try {
+                triggerPetalPop(55);
+            } catch (err) {
+                console.warn('Petal burst error:', err);
+            }
+
+            try {
+                initScratchCard();
+            } catch (err) {
+                console.warn('Scratch card init error:', err);
+            }
+        }
+        window.openInvitation = openInvitation;
+
+        // ==========================================
+        // 2. CELEBRATORY SAXOPHONE / BRASS ROCK-FUSION AUDIO ENGINE
+        // ==========================================
+        function playSaxBrassNote(freq, duration = 0.2, withVibrato = false) {
+            if (!audioCtx || !isMusicPlaying || externalAudioAvailable) return;
+            try {
+                const now = audioCtx.currentTime;
+
+                // Expressive Alto/Tenor Saxophone + Brass Horn Section layered oscillators
+                const saxOsc = audioCtx.createOscillator();
+                const brassOsc = audioCtx.createOscillator();
+                const subHarmony = audioCtx.createOscillator();
+
+                // Warm reed/horn resonant formant filter
+                const filter = audioCtx.createBiquadFilter();
+                filter.type = 'bandpass';
+                filter.frequency.setValueAtTime(1350, now);
+                filter.Q.setValueAtTime(2.2, now);
+
+                const lowpass = audioCtx.createBiquadFilter();
+                lowpass.type = 'lowpass';
+                lowpass.frequency.setValueAtTime(3400, now);
+
+                const gain = audioCtx.createGain();
+
+                saxOsc.type = 'sawtooth';
+                brassOsc.type = 'square';
+                subHarmony.type = 'sawtooth';
+
+                // Slight expressive pitch scoop into the note like a real saxophone player
+                saxOsc.frequency.setValueAtTime(freq * 0.97, now);
+                saxOsc.frequency.exponentialRampToValueAtTime(freq, now + 0.03);
+
+                brassOsc.frequency.setValueAtTime(freq * 1.003, now);
+                subHarmony.frequency.setValueAtTime(freq * 0.5, now);
+
+                if (withVibrato) {
+                    const vibOsc = audioCtx.createOscillator();
+                    const vibGain = audioCtx.createGain();
+                    vibOsc.frequency.value = 6.5;
+                    vibGain.gain.value = 6;
+                    vibOsc.connect(vibGain);
+                    vibGain.connect(saxOsc.frequency);
+                    vibOsc.start(now);
+                    vibOsc.stop(now + duration);
+                }
+
+                gain.gain.setValueAtTime(0.001, now);
+                gain.gain.linearRampToValueAtTime(0.095, now + 0.02);
+                gain.gain.setValueAtTime(0.08, now + duration * 0.65);
+                gain.gain.exponentialRampToValueAtTime(0.0008, now + duration);
+
+                saxOsc.connect(filter);
+                brassOsc.connect(filter);
+                subHarmony.connect(lowpass);
+                filter.connect(lowpass);
+                lowpass.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                saxOsc.start(now);
+                brassOsc.start(now);
+                subHarmony.start(now);
+                saxOsc.stop(now + duration);
+                brassOsc.stop(now + duration);
+                subHarmony.stop(now + duration);
+            } catch (err) {
+                console.warn(err);
+            }
+        }
+
+        function playRockBassAndGuitar(freq, duration = 0.16) {
+            if (!audioCtx || !isMusicPlaying || externalAudioAvailable) return;
+            try {
+                const now = audioCtx.currentTime;
+                const bassOsc = audioCtx.createOscillator();
+                const fifthOsc = audioCtx.createOscillator();
+                const filter = audioCtx.createBiquadFilter();
+                const gain = audioCtx.createGain();
+
+                bassOsc.type = 'sawtooth';
+                fifthOsc.type = 'square';
+
+                bassOsc.frequency.setValueAtTime(freq, now);
+                fifthOsc.frequency.setValueAtTime(freq * 1.5, now); // Power chord fifth
+
+                filter.type = 'lowpass';
+                filter.frequency.setValueAtTime(680, now);
+
+                gain.gain.setValueAtTime(0.001, now);
+                gain.gain.linearRampToValueAtTime(0.075, now + 0.015);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+                bassOsc.connect(filter);
+                fifthOsc.connect(filter);
+                filter.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                bassOsc.start(now);
+                fifthOsc.start(now);
+                bassOsc.stop(now + duration);
+                fifthOsc.stop(now + duration);
+            } catch (err) {
+                console.warn(err);
+            }
+        }
+
+        function playRockDrumStep(stepInBar) {
+            if (!audioCtx || !isMusicPlaying || externalAudioAvailable) return;
+            try {
+                const now = audioCtx.currentTime;
+
+                // Punchy Kick Drum on beats 0, 3, 6, 8, 10
+                if (stepInBar === 0 || stepInBar === 3 || stepInBar === 6 || stepInBar === 8 || stepInBar === 10) {
+                    const kickOsc = audioCtx.createOscillator();
+                    const kickGain = audioCtx.createGain();
+                    kickOsc.type = 'sine';
+                    kickOsc.frequency.setValueAtTime(135, now);
+                    kickOsc.frequency.exponentialRampToValueAtTime(38, now + 0.11);
+
+                    kickGain.gain.setValueAtTime(0.16, now);
+                    kickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.13);
+
+                    kickOsc.connect(kickGain);
+                    kickGain.connect(audioCtx.destination);
+                    kickOsc.start(now);
+                    kickOsc.stop(now + 0.13);
+                }
+
+                // Crisp Rock Snare on backbeats 4 and 12
+                if (stepInBar === 4 || stepInBar === 12) {
+                    const bufferSize = audioCtx.sampleRate * 0.12;
+                    const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+                    const output = noiseBuffer.getChannelData(0);
+                    for (let i = 0; i < bufferSize; i++) {
+                        output[i] = Math.random() * 2 - 1;
+                    }
+                    const whiteNoise = audioCtx.createBufferSource();
+                    whiteNoise.buffer = noiseBuffer;
+
+                    const snareFilter = audioCtx.createBiquadFilter();
+                    snareFilter.type = 'highpass';
+                    snareFilter.frequency.setValueAtTime(750, now);
+
+                    const snareGain = audioCtx.createGain();
+                    snareGain.gain.setValueAtTime(0.085, now);
+                    snareGain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+
+                    whiteNoise.connect(snareFilter);
+                    snareFilter.connect(snareGain);
+                    snareGain.connect(audioCtx.destination);
+                    whiteNoise.start(now);
+                } else if (stepInBar % 2 === 0) {
+                    // Tight Hi-Hat pulse on 8th notes
+                    const bufferSize = audioCtx.sampleRate * 0.04;
+                    const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+                    const output = noiseBuffer.getChannelData(0);
+                    for (let i = 0; i < bufferSize; i++) {
+                        output[i] = Math.random() * 2 - 1;
+                    }
+                    const hatNoise = audioCtx.createBufferSource();
+                    hatNoise.buffer = noiseBuffer;
+
+                    const hatFilter = audioCtx.createBiquadFilter();
+                    hatFilter.type = 'highpass';
+                    hatFilter.frequency.setValueAtTime(5500, now);
+
+                    const hatGain = audioCtx.createGain();
+                    hatGain.gain.setValueAtTime(0.025, now);
+                    hatGain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
+
+                    hatNoise.connect(hatFilter);
+                    hatFilter.connect(hatGain);
+                    hatGain.connect(audioCtx.destination);
+                    hatNoise.start(now);
+                }
+            } catch (err) {
+                console.warn(err);
+            }
+        }
+
+        function startAudio() {
+            const musicBtn = document.getElementById('music-toggle-btn');
+            const iconPlay = document.getElementById('icon-play');
+            const iconPause = document.getElementById('icon-pause');
+            const bgAudio = document.getElementById('bg-audio');
+
+            isMusicPlaying = true;
+            if (musicBtn) musicBtn.classList.add('is-playing');
+            if (iconPlay) iconPlay.style.display = 'none';
+            if (iconPause) iconPause.style.display = 'block';
+
+            if (externalAudioAvailable && bgAudio) {
+                bgAudio.play().catch((err) => console.warn(err));
+                return;
+            }
+
+            const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+            if (!audioCtx && AudioContextClass) {
+                audioCtx = new AudioContextClass();
+            }
+            if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume().catch((err) => console.warn(err));
+            }
+
+            if (stepInterval) clearInterval(stepInterval);
+
+            // 16th-note groove at ~148 BPM (102ms per 16th step)
+            stepInterval = setInterval(() => {
+                if (!isMusicPlaying || externalAudioAvailable) return;
+
+                const leadStep = saxLeadRiff[stepIdx % saxLeadRiff.length];
+                const barStep = stepIdx % 16;
+                const bassFreq = bassProgression[barStep];
+
+                if (leadStep && leadStep.f) {
+                    playSaxBrassNote(leadStep.f, leadStep.d, Boolean(leadStep.vib));
+                }
+                if (bassFreq) {
+                    playRockBassAndGuitar(bassFreq, 0.16);
+                }
+                playRockDrumStep(barStep);
+
+                stepIdx++;
+            }, 105);
+        }
+
+        function stopAudio() {
+            const musicBtn = document.getElementById('music-toggle-btn');
+            const iconPlay = document.getElementById('icon-play');
+            const iconPause = document.getElementById('icon-pause');
+            const bgAudio = document.getElementById('bg-audio');
+
+            isMusicPlaying = false;
+            if (musicBtn) musicBtn.classList.remove('is-playing');
+            if (iconPlay) iconPlay.style.display = 'block';
+            if (iconPause) iconPause.style.display = 'none';
+            if (stepInterval) clearInterval(stepInterval);
+            if (bgAudio) {
+                try { bgAudio.pause(); } catch (err) { console.warn(err); }
+            }
+        }
+
+        function toggleAudio() {
+            try {
+                if (isMusicPlaying) stopAudio();
+                else startAudio();
+            } catch (err) {
+                console.warn(err);
+            }
+        }
+        window.toggleAudio = toggleAudio;
+
+        // ==========================================
+        // 3. FLOWER / MARIGOLD PETAL POP ENGINE
+        // ==========================================
+        function resizePetalCanvas() {
+            const petalCanvas = document.getElementById('petal-canvas');
+            if (!petalCanvas) return;
+            petalCanvas.width = window.innerWidth;
+            petalCanvas.height = window.innerHeight;
+        }
+
+        function triggerPetalPop(count = 65) {
+            const petalCanvas = document.getElementById('petal-canvas');
+            if (!petalCanvas) return;
+            resizePetalCanvas();
+
+            const cx = window.innerWidth / 2;
+            const cy = window.innerHeight * 0.45;
+
+            for (let i = 0; i < count; i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const speed = 2.5 + Math.random() * 8.5;
+                petals.push({
+                    x: cx + (Math.random() - 0.5) * 80,
+                    y: cy + (Math.random() - 0.5) * 60,
+                    vx: Math.cos(angle) * speed,
+                    vy: Math.sin(angle) * speed - 3.5,
+                    w: 7 + Math.random() * 8,
+                    h: 5 + Math.random() * 5,
+                    color: petalColors[Math.floor(Math.random() * petalColors.length)],
+                    rot: Math.random() * Math.PI * 2,
+                    rotSpeed: (Math.random() - 0.5) * 0.14,
+                    opacity: 1
+                });
+            }
+            if (!petalAnimId) animatePetals();
+        }
+
+        function animatePetals() {
+            const petalCanvas = document.getElementById('petal-canvas');
+            if (!petalCanvas) return;
+            const pCtx = petalCanvas.getContext('2d');
+            if (!pCtx) return;
+
+            pCtx.clearRect(0, 0, petalCanvas.width, petalCanvas.height);
+            petals.forEach((p) => {
+                p.x += p.vx;
+                p.y += p.vy;
+                p.vy += 0.16;
+                p.vx *= 0.99;
+                p.rot += p.rotSpeed;
+                if (p.y > petalCanvas.height * 0.75) {
+                    p.opacity -= 0.018;
+                }
+
+                pCtx.save();
+                pCtx.translate(p.x, p.y);
+                pCtx.rotate(p.rot);
+                pCtx.globalAlpha = Math.max(0, p.opacity);
+                pCtx.fillStyle = p.color;
+                pCtx.beginPath();
+                pCtx.ellipse(0, 0, p.w, p.h, 0, 0, Math.PI * 2);
+                pCtx.fill();
+                pCtx.restore();
+            });
+
+            petals = petals.filter((p) => p.opacity > 0 && p.y < petalCanvas.height + 40);
+            if (petals.length > 0) {
+                petalAnimId = requestAnimationFrame(animatePetals);
+            } else {
+                petalAnimId = null;
+            }
+        }
+
+        // ==========================================
+        // 4. SCRATCH-TO-REVEAL DATE CANVAS + FALLBACK TAP
+        // ==========================================
+        function initScratchCard() {
+            const scratchCanvas = document.getElementById('scratch-canvas');
+            if (!scratchCanvas || isDateRevealed) return;
+            const sCtx = scratchCanvas.getContext('2d');
+            if (!sCtx) return;
+
+            const rect = scratchCanvas.parentElement.getBoundingClientRect();
+            scratchCanvas.width = rect.width > 20 ? rect.width : 320;
+            scratchCanvas.height = rect.height > 20 ? rect.height : 205;
+
+            const grad = sCtx.createLinearGradient(0, 0, scratchCanvas.width, scratchCanvas.height);
+            grad.addColorStop(0, '#9A7414');
+            grad.addColorStop(0.25, '#DFBD59');
+            grad.addColorStop(0.5, '#FFF2B8');
+            grad.addColorStop(0.75, '#C89B32');
+            grad.addColorStop(1, '#8E6A14');
+
+            sCtx.globalCompositeOperation = 'source-over';
+            sCtx.fillStyle = grad;
+            sCtx.fillRect(0, 0, scratchCanvas.width, scratchCanvas.height);
+
+            sCtx.strokeStyle = 'rgba(255, 255, 255, 0.65)';
+            sCtx.lineWidth = 2;
+            sCtx.strokeRect(10, 10, scratchCanvas.width - 20, scratchCanvas.height - 20);
+
+            sCtx.fillStyle = '#2A1D05';
+            sCtx.font = '700 17px Cinzel, serif';
+            sCtx.textAlign = 'center';
+            sCtx.fillText('✨ SCRATCH HERE ✨', scratchCanvas.width / 2, scratchCanvas.height / 2 - 6);
+
+            sCtx.font = 'italic 15px "Cormorant Garamond", serif';
+            sCtx.fillText('To Reveal Our Engagement Date', scratchCanvas.width / 2, scratchCanvas.height / 2 + 20);
+        }
+
+        function revealDateDirectly() {
+            if (isDateRevealed) return;
+            isDateRevealed = true;
+            const scratchCanvas = document.getElementById('scratch-canvas');
+            const scratchStatus = document.getElementById('scratch-status');
+            if (scratchCanvas) {
+                scratchCanvas.style.opacity = '0';
+                scratchCanvas.style.pointerEvents = 'none';
+            }
+            if (scratchStatus) {
+                scratchStatus.textContent = '🎉 Date Revealed! Sunday, 22.11.2026 (10 AM - 11 AM)';
+                scratchStatus.style.textDecoration = 'none';
+            }
+            try {
+                triggerPetalPop(75);
+                if (isMusicPlaying && !externalAudioAvailable) {
+                    playSaxBrassNote(N.C5, 0.22, false);
+                    setTimeout(() => playSaxBrassNote(N.F5, 0.38, true), 150);
+                }
+            } catch (err) {
+                console.warn(err);
+            }
+        }
+        window.revealDateDirectly = revealDateDirectly;
+
+        // ==========================================
+        // 5. DOM READY BINDINGS & COUNTDOWN
+        // ==========================================
+        window.addEventListener('DOMContentLoaded', () => {
+            const openBtn = document.getElementById('open-invite-btn');
+            const waxSealBtn = document.getElementById('wax-seal-btn');
+            const bgAudio = document.getElementById('bg-audio');
+            const scratchCanvas = document.getElementById('scratch-canvas');
+
+            // Bind both click and touchend to Tap to Open Button and Wax Seal
+            if (openBtn) {
+                openBtn.addEventListener('click', openInvitation);
+                openBtn.addEventListener('touchend', openInvitation, { passive: false });
+            }
+            if (waxSealBtn) {
+                waxSealBtn.addEventListener('click', openInvitation);
+                waxSealBtn.addEventListener('touchend', openInvitation, { passive: false });
+            }
+
+            if (bgAudio) {
+                bgAudio.addEventListener('canplaythrough', () => {
+                    externalAudioAvailable = true;
+                });
+            }
+
+            try {
+                resizePetalCanvas();
+                window.addEventListener('resize', resizePetalCanvas);
+            } catch (err) {
+                console.warn(err);
+            }
+
+            try {
+                initScratchCard();
+            } catch (err) {
+                console.warn(err);
+            }
+
+            // Scratch interaction bindings
+            if (scratchCanvas) {
+                const sCtx = scratchCanvas.getContext('2d');
+
+                function getScratchCoords(e) {
+                    const rect = scratchCanvas.getBoundingClientRect();
+                    const clientX = e.touches && e.touches.length ? e.touches[0].clientX : e.clientX;
+                    const clientY = e.touches && e.touches.length ? e.touches[0].clientY : e.clientY;
+                    return {
+                        x: clientX - rect.left,
+                        y: clientY - rect.top
+                    };
+                }
+
+                function checkScratchPercentage() {
+                    if (isDateRevealed || !sCtx) return;
+                    try {
+                        const imgData = sCtx.getImageData(0, 0, scratchCanvas.width, scratchCanvas.height).data;
+                        let transparentPixels = 0;
+                        const totalSampled = imgData.length / 16;
+
+                        for (let i = 3; i < imgData.length; i += 16) {
+                            if (imgData[i] < 128) transparentPixels++;
+                        }
+
+                        if (transparentPixels / totalSampled > 0.34) {
+                            revealDateDirectly();
+                        }
+                    } catch (err) {
+                        revealDateDirectly();
+                    }
+                }
+
+                function scratchStroke(pos) {
+                    if (isDateRevealed || !sCtx) return;
+                    sCtx.globalCompositeOperation = 'destination-out';
+                    sCtx.beginPath();
+                    sCtx.arc(pos.x, pos.y, 28, 0, Math.PI * 2);
+                    sCtx.fill();
+                    checkScratchPercentage();
+                }
+
+                scratchCanvas.addEventListener('mousedown', (e) => { isDrawing = true; scratchStroke(getScratchCoords(e)); });
+                scratchCanvas.addEventListener('mousemove', (e) => { if (isDrawing) scratchStroke(getScratchCoords(e)); });
+                window.addEventListener('mouseup', () => { isDrawing = false; });
+
+                scratchCanvas.addEventListener('touchstart', (e) => {
+                    isDrawing = true;
+                    scratchStroke(getScratchCoords(e));
+                }, { passive: true });
+
+                scratchCanvas.addEventListener('touchmove', (e) => {
+                    if (!isDrawing) return;
+                    e.preventDefault();
+                    scratchStroke(getScratchCoords(e));
+                }, { passive: false });
+
+                scratchCanvas.addEventListener('touchend', () => { isDrawing = false; });
+            }
+
+            // Countdown Timer to 22.11.2026 10:00 AM IST
+            const targetDate = new Date('2026-11-22T10:00:00+05:30').getTime();
+            const elDays = document.getElementById('cd-days');
+            const elHours = document.getElementById('cd-hours');
+            const elMins = document.getElementById('cd-mins');
+            const elSecs = document.getElementById('cd-secs');
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const diff = targetDate - now;
+
+                if (diff <= 0) {
+                    if (elDays) elDays.textContent = '00';
+                    if (elHours) elHours.textContent = '00';
+                    if (elMins) elMins.textContent = '00';
+                    if (elSecs) elSecs.textContent = '00';
+                    return;
+                }
+
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+                if (elDays) elDays.textContent = String(d).padStart(2, '0');
+                if (elHours) elHours.textContent = String(h).padStart(2, '0');
+                if (elMins) elMins.textContent = String(m).padStart(2, '0');
+                if (elSecs) elSecs.textContent = String(s).padStart(2, '0');
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // Smooth Scroll Reveal Observer
+            const revealItems = document.querySelectorAll('.reveal-on-scroll');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.12 });
+                revealItems.forEach((item) => observer.observe(item));
+            } else {
+                revealItems.forEach((item) => item.classList.add('visible'));
+            }
+        });
+    </script>
+</body>
+</html>
